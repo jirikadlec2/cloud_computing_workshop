@@ -1,0 +1,11 @@
+[project]
+name = "cloud-computing-workshop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "odc-stac>=0.4.0",
+    "pystac-client>=0.9.0",
+    "stackstac[viz]>=0.5.1",
+]
