@@ -1,0 +1,15 @@
+aws --profile cloud-computing-workshop ecr get-login-password --region af-south-1 | docker login --username AWS --password-stdin 824368189788.dkr.ecr.af-south-1.amazonaws.com
+
+docker tag lake-worker:latest 824368189788.dkr.ecr.af-south-1.amazonaws.com/lake-processor-repo:0.2
+
+docker push 824368189788.dkr.ecr.af-south-1.amazonaws.com/lake-processor-repo:0.2
+
+to run locally:
+docker run --rm -it \
+  -e LAKE_ID=101 \
+  -e LAKE_NAME="Lake Chad" \
+  -e LAKE_WEST=13.1 \
+  -e LAKE_EAST=15.1 \
+  -e LAKE_SOUTH=12.5 \
+  -e LAKE_NORTH=14.5 \
+  824368189788.dkr.ecr.af-south-1.amazonaws.com/lake-processor-repo:0.1
